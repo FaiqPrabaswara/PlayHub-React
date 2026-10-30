@@ -1,9 +1,11 @@
+
 import { useState } from "react";
 
 import Header from "./components/Header";
 import RingkasanGame from "./components/RingkasanGame";
 import FormTambahGame from "./components/FormTambahGame";
 import DaftarGame from "./components/DaftarGame";
+import KomunitasGame from "./components/KomunitasGame";
 
 import "./App.css";
 
@@ -32,6 +34,7 @@ function App() {
     }
   ]);
 
+  // Fungsi menambahkan game baru
   function tambahGame(gameBaru) {
     const dataBaru = {
       id: Date.now(),
@@ -44,6 +47,7 @@ function App() {
     setDaftarGame([...daftarGame, dataBaru]);
   }
 
+  // Fungsi menghapus game
   function hapusGame(id) {
     const dataTersisa = daftarGame.filter(
       (game) => game.id !== id
@@ -65,6 +69,9 @@ function App() {
           daftarGame={daftarGame}
           onHapus={hapusGame}
         />
+
+        {/* Fitur baru Tugas 7 */}
+        <KomunitasGame />
       </main>
 
       <footer className="footer">
