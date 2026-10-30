@@ -34,7 +34,6 @@ function App() {
     }
   ]);
 
-  // Fungsi menambahkan game baru
   function tambahGame(gameBaru) {
     const dataBaru = {
       id: Date.now(),
@@ -47,7 +46,6 @@ function App() {
     setDaftarGame([...daftarGame, dataBaru]);
   }
 
-  // Fungsi menghapus game
   function hapusGame(id) {
     const dataTersisa = daftarGame.filter(
       (game) => game.id !== id
@@ -70,7 +68,6 @@ function App() {
           onHapus={hapusGame}
         />
 
-        {/* Fitur baru Tugas 7 */}
         <KomunitasGame />
       </main>
 
