@@ -1,105 +1,230 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #F1F5F9;
+    color: #0F172A;
+}
+
 .header {
-    background-color: #6c3db5;
+    background-color: #0F172A;
     color: white;
     text-align: center;
-    padding: 25px;
+    padding: 35px 20px;
+    border-bottom: 5px solid #06B6D4;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 36px;
+    color: #67E8F9;
+}
+
+.header p {
+    margin-top: 10px;
+    color: #CBD5E1;
+    font-size: 15px;
 }
 
 .container {
     width: 90%;
-    max-width: 1000px;
-    margin: 25px auto;
-}
-
-.ringkasan,
-.form-game,
-.kartu-game {
-    background-color: white;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
+    max-width: 1100px;
+    margin: 30px auto;
 }
 
 h2 {
-    color: #5a2ca0;
+    color: #0F172A;
+    margin-top: 0;
+    margin-bottom: 18px;
+}
+
+.ringkasan {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    border-left: 5px solid #06B6D4;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.ringkasan p {
+    color: #334155;
+}
+
+.form-game {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    border: 1px solid #E2E8F0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
 }
 
 .form-game label {
     display: block;
     margin-top: 12px;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #334155;
 }
 
 .form-game input {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     box-sizing: border-box;
-    border: 1px solid #c9b8e8;
-    border-radius: 5px;
+    border: 1px solid #CBD5E1;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #F8FAFC;
+}
+
+.form-game input:focus {
+    outline: none;
+    border-color: #06B6D4;
+    background-color: white;
 }
 
 button {
-    background-color: #6c3db5;
+    background-color: #0891B2;
     color: white;
     border: none;
-    padding: 10px 15px;
+    padding: 11px 18px;
     margin-top: 15px;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
+    font-size: 14px;
 }
 
 button:hover {
-    background-color: #4f278c;
+    background-color: #0E7490;
 }
 
-/* Daftar game */
 .daftar-kartu {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.kartu-game {
+    background-color: white;
+    padding: 22px;
+    border-radius: 10px;
+    border: 1px solid #E2E8F0;
+    border-top: 4px solid #06B6D4;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.kartu-game h3 {
+    color: #0F172A;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.kartu-game p {
+    color: #475569;
+    line-height: 1.5;
 }
 
 .tombol-hapus {
-    background-color: #dc3545;
+    background-color: #DC2626;
+    color: white;
+}
+
+.tombol-hapus:hover {
+    background-color: #B91C1C;
 }
 
 .komunitas {
+    background-color: white;
+    padding: 25px;
     margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    border: 1px solid #E2E8F0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.komunitas h2 {
+    color: #0F172A;
+    border-bottom: 3px solid #06B6D4;
+    padding-bottom: 12px;
+}
+
+.komunitas p {
+    color: #475569;
 }
 
 .daftar-anggota {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    gap: 18px;
+    margin-top: 20px;
 }
 
 .kartu-anggota {
-    background-color: white;
+    background-color: #F8FAFC;
     padding: 20px;
     border-radius: 8px;
+    border: 1px solid #CBD5E1;
 }
 
 .kartu-anggota h3 {
-    color: #6c3db5;
+    color: #0891B2;
+    margin-top: 0;
+}
+
+.kartu-anggota p {
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #334155;
 }
 
 .pesan-error {
-    color: red;
+    color: #DC2626 !important;
+    font-weight: bold;
 }
 
 .footer {
-    background-color: #32166b;
+    background-color: #0F172A;
     color: white;
     text-align: center;
-    padding: 15px;
+    padding: 20px;
+    margin-top: 35px;
+    border-top: 4px solid #06B6D4;
 }
 
-@media (max-width: 700px) {
+.footer p {
+    margin: 0;
+    color: #CBD5E1;
+}
+
+@media (max-width: 900px) {
+    .daftar-kartu {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 92%;
+    }
+
+    .header h1 {
+        font-size: 28px;
+    }
+
     .daftar-kartu {
         grid-template-columns: 1fr;
     }
 
     .daftar-anggota {
         grid-template-columns: 1fr;
+    }
+
+    .ringkasan,
+    .form-game,
+    .komunitas {
+        padding: 18px;
     }
 }
