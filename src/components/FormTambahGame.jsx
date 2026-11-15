@@ -5,31 +5,40 @@ function FormTambahGame({ onTambah }) {
     const [genre, setGenre] = useState("");
     const [platform, setPlatform] = useState("");
     const [developer, setDeveloper] = useState("");
+    const [tahunRilis, setTahunRilis] = useState("");
+    const [sudahDimainkan, setSudahDimainkan] = useState(false);
 
-    function handleSubmit(event) {
+    async function handleSubmit(event) {
         event.preventDefault();
 
         if (
             nama.trim() === "" ||
             genre.trim() === "" ||
             platform.trim() === "" ||
-            developer.trim() === ""
+            developer.trim() === "" ||
+            tahunRilis === ""
         ) {
             alert("Semua kolom harus diisi!");
             return;
         }
 
-        onTambah({
+        const berhasil = await onTambah({
             nama: nama,
             genre: genre,
             platform: platform,
-            developer: developer
+            developer: developer,
+            tahunRilis: Number(tahunRilis),
+            sudahDimainkan: sudahDimainkan
         });
 
-        setNama("");
-        setGenre("");
-        setPlatform("");
-        setDeveloper("");
+        if (berhasil) {
+            setNama("");
+            setGenre("");
+            setPlatform("");
+            setDeveloper("");
+            setTahunRilis("");
+            setSudahDimainkan(false);
+        }
     }
 
     return (
@@ -63,6 +72,22 @@ function FormTambahGame({ onTambah }) {
                     type="text"
                     value={developer}
                     onChange={(event) => setDeveloper(event.target.value)}
+                />
+
+                <label>Tahun Rilis</label>
+                <input
+                    type="number"
+                    min="1950"
+                    value={tahunRilis}
+                    onChange={(event) => setTahunRilis(event.target.value)}
+                    required
+                />
+
+                <label>Sudah Dimainkan</label>
+                <input
+                    type="checkbox"
+                    checked={sudahDimainkan}
+                    onChange={(event) => setSudahDimainkan(event.target.checked)}
                 />
 
                 <button type="submit">Tambah Game</button>

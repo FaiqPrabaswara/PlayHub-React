@@ -1,0 +1,59 @@
+
+### 1. GET - Menampilkan semua game
+GET http://localhost:3001/games
+
+### 2. POST - Menambahkan game
+POST http://localhost:3001/games
+Content-Type: application/json
+
+{
+  "nama": "Ghost of Tsushima DIRECTOR'S CUT",
+  "genre": "Adventure",
+  "platform": "PC",
+  "developer": "Sucker Punch Productions",
+  "tahunRilis": 2024,
+  "sudahDimainkan": false
+}
+
+### 3. GET - Menampilkan game berdasarkan ID
+GET http://localhost:3001/games/4
+
+### 4. PATCH - Mengubah game
+PATCH http://localhost:3001/games/1
+Content-Type: application/json
+
+{
+  "genre": "Survival"
+}
+
+### 5. DELETE - Menghapus game
+DELETE http://localhost:3001/games/2
+
+### 6. ERROR 404 - Game tidak ditemukan
+GET http://localhost:3001/games/999
+
+### 7. ERROR 400 - Validasi data
+POST http://localhost:3001/games
+Content-Type: application/json
+
+{
+  "nama": "A",
+  "genre": "Sandbox",
+  "platform": "PC",
+  "developer": "Mojang",
+  "tahunRilis": 1900,
+  "sudahDimainkan": true
+}
+
+### 8. ERROR 409 - Nama game duplikat
+POST http://localhost:3001/games
+Content-Type: application/json
+
+{
+  "nama": "Minecraft",
+  "genre": "Sandbox",
+  "platform": "PC",
+  "developer": "Mojang",
+  "tahunRilis": 2011,
+  "sudahDimainkan": true
+}

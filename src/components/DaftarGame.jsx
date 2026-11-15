@@ -1,6 +1,6 @@
 import KartuGame from "./KartuGame";
 
-function DaftarGame({ daftarGame, onHapus }) {
+function DaftarGame({ daftarGame, onHapus, onEdit }) {
     if (daftarGame.length === 0) {
         return <p>Belum ada data game.</p>;
     }
@@ -15,6 +15,7 @@ function DaftarGame({ daftarGame, onHapus }) {
                         key={game.id}
                         game={game}
                         onHapus={onHapus}
+                        onEdit={onEdit}
                     />
                 ))}
             </div>
